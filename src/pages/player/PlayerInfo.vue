@@ -44,7 +44,7 @@ export default {
           document.querySelectorAll("p")[i] &&
             document.querySelectorAll("p")[i].classList.add("on");
           if (lyricBox) {
-            console.log(i);
+            // console.log(i);
             lyricBox.style.transform = `translateY(-${(i - 1) * 34}px)`;
           }
         } else {
@@ -77,7 +77,6 @@ export default {
       if (res && res.code === 200 && res.lrc) {
         this.lyric = res.lrc.lyric;
         this.result = parseLyric(this.lyric);
-        console.log(this.result);
       } else {
         this.lyric = "";
       }

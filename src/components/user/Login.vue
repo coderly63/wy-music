@@ -129,9 +129,12 @@ export default {
             console.log(res);
             if (res.code == 200) {
               this.$message.success("登陆成功");
+              window.localStorage.setItem("phone", this.loadForm1.phone);
+              window.localStorage.setItem("password", this.loadForm1.password);
               this.isLoading = false;
               this.$store.commit("setLogin", "true");
               this.$store.commit("setAvatarUrlL", res.profile.avatarUrl);
+              this.$store.commit("setUserId", res.account.id);
             } else {
               this.$message.error("密码错误 请重试");
             }

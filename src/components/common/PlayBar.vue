@@ -52,7 +52,10 @@
         <a title="下载">
           <img src="../../assets/img/下 载.png" alt="" />
         </a>
-        <a title="喜欢">
+        <a title="不喜欢" v-if="!isLike" @click="like()">
+          <img src="../../assets/img/非爱心.png" alt="" />
+        </a>
+        <a title="喜欢" v-else @click="noLike()">
           <img src="../../assets/img/爱心.png" alt="" />
         </a>
         <a title="列表" @click="$router.push('/home/player')">
@@ -66,6 +69,7 @@
 <script>
 import { mapGetters } from "vuex";
 import { toSeconds } from "../../utils/index";
+import { likeSong } from "@/network/api/user";
 export default {
   data() {
     return {
@@ -93,6 +97,9 @@ export default {
       "picUrl",
       "volume",
       "curSeconds",
+      "isLike",
+      "likeList",
+      "isLogin",
     ]),
   },
   watch: {
@@ -182,6 +189,31 @@ export default {
     },
     changeTime() {
       this.$store.commit("setChangeTime", this.spotPos * 0.01 * this.allTime);
+    },
+    async like() {
+      if (this.isLogin && this.id > 0) {
+        if (!this.isLike) {
+          const res = await likeSong(this.id);
+          if (res && res.code === 200) {
+            this.$message.success("已添加到我的喜欢");
+            this.$store.commit("pushLikeSong", this.id);
+            console.log(this.$store.getters.likeList);
+            this.$store.commit("setIsLike", true);
+          }
+        }
+      } else if (!this.isLogin) {
+        this.$message.error("请先登录");
+      } else if (!this.id) {
+        this.$message.error("歌单中暂无歌曲");
+      }
+    },
+    async noLike() {
+      const res = await likeSong(this.id, false);
+      if (res && res.code === 200) {
+        this.$message.success("已从到我的喜欢移除");
+        this.$store.commit("spliceLikeSong");
+        this.$store.commit("setIsLike", false);
+      }
     },
   },
 };

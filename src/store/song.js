@@ -19,6 +19,8 @@ export const song = {
       volume: 0, //歌曲音量
       isLoading: false,
       error: false,
+      isLike: false,
+      likeList: [],
     }
   },
   getters: {
@@ -39,6 +41,8 @@ export const song = {
     volume: state => state.volume,
     isLoading: state => state.isLoading,
     error: state => state.error,
+    isLike: state => state.isLike,
+    likeList: state => state.likeList,
   },
   mutations: {
     setSongsList: (state, songsList) => { state.songsList = songsList },
@@ -58,10 +62,15 @@ export const song = {
     setVolume: (state, volume) => { state.volume = volume },
     setIsLoading: (state, isLoading) => { state.isLoading = isLoading },
     setError: (state, error) => { state.error = error },
+    setIsLike: (state, isLike) => { state.isLike = isLike },
+    setLikeList: (state, likeList) => { state.likeList = likeList },
+    pushLikeSong: (state, song) => { state.likeList.unshift(song) },
+    spliceLikeSong: (state, index = state.listIndex) => { state.likeList.splice(index, 1); state.songsList.splice(index, 1) }
   },
   actions: {
     nextSong: async ({ state, commit }, products) => {
       commit("setIsLoading", true);
+      commit('setIsLike', false);
       let songsList = state.songsList;
       let index = state.listIndex + products.index;
       if (index >= songsList.length) index = 0;
@@ -76,6 +85,12 @@ export const song = {
       commit("setArtist", music.artist);
       commit("setCurTime", "00:00");
       commit("setCurSeconds", 0);
+      for (let i = 0; i < state.likeList.length; i++) {
+        if (state.id === state.likeList[i]) {
+          commit('setIsLike', true);
+          break;
+        }
+      }
       getSongUrl(music.id).then(res => {
         let url = res.data[0].url
         if (res && res.code === 200 && url) {

@@ -8,12 +8,14 @@ export const store = createStore({
   state() {
     return {
       isLogin: false, //是否登录
-      avatarUrl: ''
+      avatarUrl: '',
+      userId: '',
     }
   },
   getters: {
     isLogin: state => state.isLogin,
-    avatarUrl: state => state.avatarUrl
+    avatarUrl: state => state.avatarUrl,
+    userId: state => state.userId,
   },
   mutations: {
     setLogin: (state, isLogin) => {
@@ -23,5 +25,6 @@ export const store = createStore({
     setAvatarUrlL: (state, url) => {
       state.avatarUrl = url;
     },
+    setUserId: (state, userId) => state.userId = userId,
   }
 })

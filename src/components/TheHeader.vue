@@ -19,19 +19,23 @@
         <div
           class="avatar"
           @click="$refs.login.isLoading = true"
-          v-show="!isLogin"
+          v-if="!isLogin"
         >
           <img src="../assets/img/头 像 .png" alt="" />
         </div>
         <div
           class="avatar"
           @click="$refs.register.isRegister = true"
-          v-show="!isLogin"
+          v-if="!isLogin"
           style="line-height: 50px"
         >
           注册
         </div>
-        <div class="avatar" v-show="$store.getters.isLogin">
+        <div
+          class="avatar"
+          v-if="$store.getters.isLogin"
+          @click="$router.push('/home/user')"
+        >
           <img :src="$store.getters.avatarUrl" alt="" />
         </div>
       </div>

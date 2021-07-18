@@ -129,6 +129,7 @@ export default {
         let str = "评论(" + this.recommendsCount + ")";
         this.list = ["歌曲列表", str, "收藏者"];
         const trackIds = res.playlist.trackIds;
+        console.log(trackIds);
         /**获取歌曲列表长度 */
         this.length = trackIds.length;
         for (let i = 0; i < this.length; i++) {
@@ -206,7 +207,7 @@ export default {
           margin-left: 40px;
         }
         span {
-          margin-left: 70px;
+          margin-left: 20px;
         }
         img {
           width: 35px;
