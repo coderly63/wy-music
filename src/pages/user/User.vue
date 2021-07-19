@@ -31,7 +31,14 @@
       </div>
     </div>
     <div class="avator-dialog">
-      <change-avator ref="avator" :avatorUrl="avatorUrl"></change-avator>
+      <change-avator
+        ref="avator"
+        :avatorUrl="avatorUrl"
+        :width="width"
+        :height="height"
+        v-if="width > 0"
+        @close="width = 0"
+      ></change-avator>
     </div>
   </div>
 </template>
@@ -56,6 +63,8 @@ export default {
       profile: {},
       playlist: [],
       avatorUrl: "",
+      width: 0,
+      height: 0,
     };
   },
   methods: {
@@ -80,9 +89,17 @@ export default {
     },
     avatorChange() {
       const avatorImage = document.querySelector("#avatorFile").files[0];
-      console.log(avatorImage);
       this.avatorUrl = window.webkitURL.createObjectURL(avatorImage);
-      this.$refs.avator.avatorDialogVisible = true;
+      let img = new Image();
+      img.src = this.avatorUrl;
+      img.onload = () => {
+        // console.dir(img);
+        this.width = img.width;
+        this.height = img.height;
+        setTimeout(() => {
+          this.$refs.avator.avatorDialogVisible = true;
+        });
+      };
     },
   },
 };

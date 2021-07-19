@@ -14,6 +14,7 @@
             'albumDetail',
             'search-detail',
             'user',
+            'change-avator',
           ]"
         >
           <component :is="Component"></component>
