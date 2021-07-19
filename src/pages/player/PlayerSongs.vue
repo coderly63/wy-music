@@ -63,9 +63,6 @@ export default {
     },
   },
   watch: {
-    $route() {
-      this.$store.commit("setListIndex", -1);
-    },
     page(to, from) {
       console.log(to);
       console.log(from);

@@ -25,11 +25,7 @@
         </p>
       </div>
     </div>
-    <music-list
-      :musics="songList"
-      :tempList="songList"
-      class="musics"
-    ></music-list>
+    <music-list :musics="songList" class="musics"></music-list>
   </div>
 </template>
 

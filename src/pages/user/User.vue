@@ -37,7 +37,7 @@
         :width="width"
         :height="height"
         v-if="width > 0"
-        @close="width = 0"
+        @close="close"
       ></change-avator>
     </div>
   </div>
@@ -100,6 +100,11 @@ export default {
           this.$refs.avator.avatorDialogVisible = true;
         });
       };
+    },
+    close() {
+      this.width = 0;
+      const avator = document.querySelector("#avatorFile");
+      avator.value = "";
     },
   },
 };

@@ -133,6 +133,7 @@ export default {
             margin: -30px;
             transform: scale(0.3, 0.3);
             transition: all 0.7s;
+            pointer-events: none;
           }
           .playlist-mask {
             pointer-events: none;
@@ -150,7 +151,6 @@ export default {
             height: 100%;
             object-fit: cover;
             transition: all 0.7s;
-            pointer-events: visible;
           }
         }
       }

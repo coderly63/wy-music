@@ -49,9 +49,11 @@
       </div>
       <template #footer>
         <span class="dialog-footer">
-          <el-button @click="avatorDialogVisible = false">取 消</el-button>
-          <el-button type="primary" @click="avatorDialogVisible = false"
-            >确 定</el-button
+          <el-button round @click="avatorDialogVisible = false"
+            >取 消</el-button
+          >
+          <el-button round type="danger" @click="avatorDialogVisible = false"
+            >保存并关闭</el-button
           >
         </span>
       </template>

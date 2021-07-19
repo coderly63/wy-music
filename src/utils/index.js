@@ -37,10 +37,12 @@ export function parseLyric(str) {
     let t = time.slice(1, -1).split(":");
     time = parseInt(t[0]) * 60 + parseFloat(t[1]);
     let value = item.replace(reg, "");
-    result.push({
-      time,
-      value,
-    });
+    if (value !== '') {
+      result.push({
+        time,
+        value,
+      });
+    }
   }
   return result;
 }

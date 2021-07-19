@@ -78,6 +78,7 @@ export const song = {
       let music = songsList[index];
       commit("setIsPlay", false);
       commit("setListIndex", index);
+      console.log(state.listIndex);
       commit("setId", music.id);
       commit("setName", music.name);
       commit("setDuration", music.time);

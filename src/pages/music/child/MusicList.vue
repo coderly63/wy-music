@@ -2,7 +2,7 @@
 <template>
   <div class="musiclist">
     <el-table
-      :data="tempList"
+      :data="musics"
       highlight-current-row
       style="width: 100%"
       stripe
@@ -26,12 +26,6 @@ export default {
   props: {
     //应该每次只加载一部分 分批加载 现在是一次性全部加载完 资源浪费
     musics: {
-      type: Array,
-      default() {
-        return [];
-      },
-    },
-    tempList: {
       type: Array,
       default() {
         return [];

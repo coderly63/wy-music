@@ -44,7 +44,6 @@
     <!-- 歌曲列表 -->
     <music-list
       :musics="musicList"
-      :tempList="tempList"
       v-if="currentIndex === 0 && musicList.length !== 0"
     ></music-list>
     <comment
@@ -81,7 +80,6 @@ export default {
       tabs: ["歌曲列表", "评论", "收藏者"],
       currentIndex: 0,
       subscribers: [],
-      tempList: [], //临时数组 存放musicList的部分信息 若一次显示太多数据会造成浏览器卡顿
     };
   },
   components: {
@@ -137,9 +135,6 @@ export default {
             if (res) {
               // console.log(res);
               let song = new songDetail(res.songs);
-              if (this.tempList.length < 30) {
-                this.tempList.push(song);
-              }
               this.musicList.push(song);
             }
           });

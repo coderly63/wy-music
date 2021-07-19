@@ -1,29 +1,34 @@
 <!--  -->
 <template>
-  <div class="player" v-if="songsList && songsList.length > 0">
-    <div class="bg-player-mask"></div>
-    <div class="bg-player" :style="{ backgroundImage: `url(${picUrl})` }"></div>
-    <div class="mod-player">
-      <div class="player-tools">
-        <el-button type="primary" round>收藏</el-button>
-        <el-button type="primary" round>添加到</el-button>
-        <el-button type="primary" round>下载</el-button>
-        <el-button type="primary" round>清空列表</el-button>
-      </div>
-      <div class="player-songs">
-        <player-songs
-          :songs="songsList && songsList"
-          v-if="songsList && songsList.length > 0"
-        ></player-songs>
-      </div>
-      <div class="player-infos">
-        <player-info
-          :song="songsList[listIndex]"
-          v-if="songsList && songsList.length > 0"
-        ></player-info>
+  <transition>
+    <div class="player">
+      <div class="bg-player-mask"></div>
+      <div
+        class="bg-player"
+        :style="{ backgroundImage: `url(${picUrl})` }"
+      ></div>
+      <div class="mod-player">
+        <div class="player-tools">
+          <el-button type="primary" round>收藏</el-button>
+          <el-button type="primary" round>添加到</el-button>
+          <el-button type="primary" round>下载</el-button>
+          <el-button type="primary" round>清空列表</el-button>
+        </div>
+        <div class="player-songs">
+          <player-songs
+            :songs="songsList && songsList"
+            v-if="songsList && songsList.length > 0"
+          ></player-songs>
+        </div>
+        <div class="player-infos">
+          <player-info
+            :song="songsList[listIndex]"
+            v-if="songsList"
+          ></player-info>
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -39,6 +44,16 @@ export default {
 };
 </script>
 <style scoped lang='less'>
+.v-enter {
+  transform: translateY(100%);
+}
+.v-leave-to {
+  transform: translateY(100%);
+}
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.4s;
+}
 .player {
   width: 100%;
   height: 100%;

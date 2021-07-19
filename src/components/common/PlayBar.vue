@@ -238,10 +238,10 @@ export default {
   }
 }
 .play-bar {
-  z-index: 10;
+  z-index: 9999;
   position: fixed;
   bottom: 0;
-  width: 1520px;
+  width: 100%;
   left: 0;
   right: 0;
   display: flex;
@@ -249,6 +249,7 @@ export default {
   background-color: #fefefe;
   box-shadow: -2px -2px 6px gray;
   border-radius: 40px;
+  min-width: 1000px;
   .pic-url {
     img {
       width: 60px;
@@ -269,7 +270,7 @@ export default {
     }
   }
   .keys {
-    width: 900px;
+    width: 60%;
     margin: 0 auto;
     height: 100%;
     display: flex;
@@ -346,6 +347,7 @@ export default {
     }
     .btns {
       margin-top: 15px;
+      min-width: 150px;
       .loading {
         width: 30px;
         height: 30px;
