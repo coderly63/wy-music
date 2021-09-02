@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { getBanners } from "../api/swiper";
+import { getBanners } from "../network/api/home";
 import { ref, reactive, onMounted } from "vue";
 export default {
   props: {
