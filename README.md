@@ -58,9 +58,9 @@ npm run dev
 
 ##### 歌单
 
-![歌单1](https://pic.imgdb.cn/item/61307b2b44eaada7399cd738.png)
+![歌单1](https://pic.imgdb.cn/item/61307f0044eaada739a4d019.png)
 
-![歌单2](https://pic.imgdb.cn/item/61307b3c44eaada7399d1ae8.png)
+![歌单2](https://pic.imgdb.cn/item/61307f1c44eaada739a4ff2e.png)
 
 ### 写在最后
 
