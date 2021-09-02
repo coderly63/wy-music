@@ -50,7 +50,7 @@ npm run dev
 
 ##### 歌曲播放
 
-![歌曲播放](https://pic.imgdb.cn/item/61307aeb44eaada7399bcf94.png)
+![歌曲播放](https://pic.imgdb.cn/item/61307b1344eaada7399c722c.png)
 
 ##### 播放界面
 
