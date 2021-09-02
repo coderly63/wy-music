@@ -1,8 +1,7 @@
 ### 前言
 
 本项目只用作学习用途，若是发表请标明出处，然后路过的兄弟求个 star。
-
-[github 地址]([coderly63/wy-music: 网易云音乐 (github.com)](https://github.com/coderly63/wy-music))
+[项目地址](https://github.com/coderly63/wy-music)
 
 ### 项目介绍
 
