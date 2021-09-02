@@ -2,7 +2,7 @@
 
 本项目只用作学习用途，若是发表请标明出处，然后路过的兄弟求个 star。
 
-[github 地址]([coderly63/wy-music: 网易云音乐 (github.com)](https://github.com/coderly63/wy-music))
+[项目地址](https://github.com/coderly63/wy-music)
 
 ### 项目介绍
 
@@ -42,7 +42,7 @@ npm run dev
 
 ##### 排行榜
 
-![排行榜](https://pic.imgdb.cn/item/613075bc44eaada73987b680.png)
+![排行榜](https://pic.imgdb.cn/item/61307aeb44eaada7399bcf94.png)
 
 ##### 搜索
 
@@ -50,7 +50,7 @@ npm run dev
 
 ##### 歌曲播放
 
-![歌曲播放](https://pic.imgdb.cn/item/6130774444eaada7398cfbab.png)
+![歌曲播放](https://pic.imgdb.cn/item/61307b1344eaada7399c722c.png)
 
 ##### 播放界面
 
@@ -58,6 +58,12 @@ npm run dev
 
 ##### 歌单
 
-![歌单1](https://pic.imgdb.cn/item/6130758f44eaada7398719dd.png)
+![歌单1](https://pic.imgdb.cn/item/61307b2b44eaada7399cd738.png)
 
-![歌单2](https://pic.imgdb.cn/item/613075b544eaada739879e9a.png)
+![歌单2](https://pic.imgdb.cn/item/61307b3c44eaada7399d1ae8.png)
+
+### 写在最后
+
+本项目还有部分功能没有完成，如主播电台和新碟上架，欢迎大家一起学习探讨
+
+我的qq：467501894
